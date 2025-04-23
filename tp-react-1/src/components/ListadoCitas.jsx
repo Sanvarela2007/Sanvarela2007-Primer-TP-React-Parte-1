@@ -1,14 +1,16 @@
 import Cita from '../Cita.jsx'
+import '../ListadoCitas.css'
+
 const ListadoCitas = () => {
 
 
   return (
-    <>
-    <h1>Listado</h1>
-        <Cita nombre = 'Nombre: Pedro' apellido='Apellido: Garcia' fecha='Fecha: 9/12' comentarios='Comentarios: Ninguno'></Cita>
-        <Cita mensaje = "Cita 2"></Cita>
-        <Cita mensaje = "Cita 3"></Cita>
-    </>
+    <div class="one-half column">
+      <h1>Listado</h1>
+      <Cita nombre = 'Pedro' apellido='Garcia' fecha='9/12' comentarios='Ninguno'></Cita>
+      <Cita nombre = 'Maximo' apellido='Gonzalez' fecha='12/10' comentarios='Realizar antes de tiempo'></Cita>
+      <Cita nombre = 'Juan' apellido='Gonzalez' fecha='21/11' comentarios='Ninguno'></Cita>
+    </div>
   )
 }
 

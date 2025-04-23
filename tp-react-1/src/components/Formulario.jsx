@@ -1,19 +1,24 @@
+import '../Formulario.css'
 
 const Formulario = () => {
   return (
-    <>
-    <div className="formulario">
-    <h2>Formulario</h2>
-  </div>
-  <h3>Ingrese su nombre</h3>
-  <input type="text"></input>
-  <h3>Ingrese su Apellido</h3>
-  <input type="text"></input>
-  <h3>Ingrese la fecha</h3>
-  <input type="date"></input>
-  <h3>Comentarios</h3>
-  <textarea></textarea>
-  </>
+    <div class="one-half column">
+      <h2>Formulario</h2>
+      <form>
+      <label>Nombre Mascota</label>
+      <input type="text" name="mascota" class="u-full-width" placeholder="Nombre Mascota" value=""/>
+      <label>Nombre Dueño</label>
+      <input type="text" name="propietario" class="u-full-width" placeholder="Nombre dueño de la mascota" value=""/>
+      <label>Fecha</label>
+      <input type="date" name="fecha" class="u-full-width" value=""/>
+      <label>hora</label>
+      <input type="time" name="hora" class="u-full-width" value=""/>
+      <label>Sintomas</label>
+      <textarea name="sintomas" class="u-full-width"></textarea>
+      <button type="submit" class="u-full-width button-primary">Agregar Cita</button>
+      </form>
+    </div>
+
     
   )
 }
