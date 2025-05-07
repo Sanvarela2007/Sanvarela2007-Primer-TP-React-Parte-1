@@ -30,7 +30,7 @@ const Formulario = ({agregarCita}) => {
     }
 
     const nuevaCita = {
-      id: Date.now(), // me recomendaron esto
+      id: Date.now(), // me recomendaron utilizar esto
       ...datos,
     }
 
@@ -47,7 +47,9 @@ const Formulario = ({agregarCita}) => {
     })
   }
 }
-const hoy = new Date().toLocaleDateString('en-CA');
+const hoy = new Date().toLocaleDateString('en-CA'); // esto lo busqué en internet para poder sacar la fecha de hoy y hacerla una constante.
+
+//Luego para llevarla al input de "Fecha" y limitar el minimo de ingreso a la fecha de hoy
 
   return (
     <div class="one-half column">
