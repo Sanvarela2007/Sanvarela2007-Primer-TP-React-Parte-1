@@ -10,10 +10,10 @@ function App() {
       {
         id: 1,
         nombre: "Santi",
-        propietario: "Pedro",
+        propietario: "Pedro", 
         fecha: "22/10",
         hora: "16:40",
-        sintomas: "Le duele la cola desde el 9/12"
+        sintomas: "Camina mal"
       },
       {
         id: 2,

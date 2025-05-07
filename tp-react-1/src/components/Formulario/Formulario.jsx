@@ -18,6 +18,8 @@ const Formulario = ({agregarCita}) => {
     setDatos({...datos, [e.target.name] : e.target.value})
   }
 
+
+  
   const enviar = (e) =>
   {
     e.preventDefault()
@@ -45,6 +47,7 @@ const Formulario = ({agregarCita}) => {
     })
   }
 }
+const hoy = new Date().toLocaleDateString('en-CA');
 
   return (
     <div class="one-half column">
@@ -55,8 +58,8 @@ const Formulario = ({agregarCita}) => {
       <label>Nombre Dueño</label>
       <input type="text" name="propietario" class="u-full-width" placeholder="Nombre dueño de la mascota" value={datos.propietario} onChange={cambios}/>
       <label>Fecha</label>
-      <input type="date" name="fecha" class="u-full-width" value={datos.fecha} onChange={cambios}/>
-      <label>hora</label>
+      <input type="date" name="fecha" class="u-full-width" value={datos.fecha} onChange={cambios}  min={hoy}/>
+      <label>Hora</label>
       <input type="time" name="hora" class="u-full-width" value={datos.hora} onChange={cambios}/>
       <label>Sintomas</label>
       <textarea name="sintomas" class="u-full-width" value={datos.sintomas} onChange={cambios}></textarea>
