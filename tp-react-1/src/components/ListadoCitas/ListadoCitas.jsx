@@ -1,8 +1,8 @@
 import Cita from '../Cita/Cita.jsx'
 
-import '../ListadoCitas/ListadoCitas.css'
+import './ListadoCitas.css'
 
-const ListadoCitas = (citas, eliminar) => {
+const ListadoCitas = ({ citas, eliminar }) => {
 
 
   return (

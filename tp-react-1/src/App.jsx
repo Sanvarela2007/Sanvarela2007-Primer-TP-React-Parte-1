@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Formulario from './components/Formulario/Formulario-'
+import Formulario from './components/Formulario/Formulario'
 import ListadoCitas from './components/ListadoCitas/ListadoCitas'
 
 function App() {
@@ -35,18 +35,18 @@ function App() {
   )
 
   const agregarCita = (nuevaCita) => {
-    setCitas(citas, nuevaCita);
+    setCitas([...citas, nuevaCita]);
   }
 
   const borrarCita = (id) => {
-    setCitas(citas.filter(cita => cita.id !== id))
+    if(confirm("¿Desea borrar la cita?"))    setCitas(citas.filter(cita => cita.id !== id))
   }
 
   return (
     <>
       <h1>ADMINISTRADOR DE PACIENTES</h1>
       <div class="container">
-        <Formulario />
+        <Formulario agregarCita={agregarCita}/>
         <ListadoCitas citas={citas} eliminar={borrarCita}/>
       </div>
     </>

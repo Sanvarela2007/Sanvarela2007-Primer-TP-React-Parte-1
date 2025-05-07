@@ -1,4 +1,4 @@
-import '../Cita/Cita.css'
+import './Cita.css'
 
 
 const Cita = ({id, nombre, propietario, fecha, hora, sintomas, eliminar}) => {
