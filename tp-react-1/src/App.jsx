@@ -2,12 +2,13 @@ import { useState } from 'react'
 import './App.css'
 import Formulario from './components/Formulario/Formulario'
 import ListadoCitas from './components/ListadoCitas/ListadoCitas'
+import { useEffect } from 'react'
 
 function App() {
 
   const[citas, setCitas] = useState(
     [
-      {
+    /*  {
         id: 1,
         nombre: "Santi",
         propietario: "Pedro", 
@@ -30,7 +31,7 @@ function App() {
         fecha: "24/10",
         hora: "14:00",
         sintomas: "Está muy decaída desde ayer"
-      },
+      },*/
     ]
   )
 
@@ -42,6 +43,22 @@ function App() {
     if(confirm("¿Desea borrar la cita?"))    setCitas(citas.filter(cita => cita.id !== id))
   }
 
+  useEffect(() => {
+    const CitasGuardadas = localStorage.getItem('citas');
+    if (CitasGuardadas) {
+      setCitas(JSON.parse(CitasGuardadas));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (citas.length) {
+      localStorage.setItem('citas', JSON.stringify(citas));
+    } else {
+      localStorage.removeItem('citas');
+    }
+  }, [citas]);
+  
+  
   return (
     <>
       <h1>ADMINISTRADOR DE PACIENTES</h1>
